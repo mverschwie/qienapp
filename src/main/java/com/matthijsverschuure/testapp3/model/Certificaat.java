@@ -9,9 +9,12 @@ import java.util.List;
 
 
 public class Certificaat {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
+
+    // Todo MappedBy()
 
     @OneToOne
     @JoinColumn(name = "leerdoelHardskillId")
@@ -20,6 +23,12 @@ public class Certificaat {
     @OneToOne
     @JoinColumn(name = "leerdoelSoftskillId")
     private LeerdoelSoftskill leerdoelSoftskill;
+
+//    public List<LeerdoelHardskill> leerdoelenHardskill = new ArrayList<>();
+//
+//    public void addLeerdoelHardskill(LeerdoelHardskill l) {
+//        this.leerdoelenHardskill.add(l);
+//    }
 
 //    public List<LeerdoelHardskill> leerdoelenHardskill = new ArrayList<>();
 //

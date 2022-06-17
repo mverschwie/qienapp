@@ -17,9 +17,14 @@ public class Leerdoel {
     private String datumAfgerond;
     private boolean isBehaald;
 
+
     @ManyToOne
     @JoinColumn(name = "trainee_id")
     private Trainee trainee;
+
+    @ManyToOne
+    @JoinColumn(name = "certificaatId")
+    private Certificaat certificaat;
 
     public String getOmschrijvingLeerdoel() {
         return omschrijvingLeerdoel;

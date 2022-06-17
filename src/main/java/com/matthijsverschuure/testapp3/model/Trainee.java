@@ -35,7 +35,6 @@ public class Trainee extends User {
 //    }
 
     @OneToMany(mappedBy = "trainee")
-//    private Set<Leerdoel> leerdoelen = new HashSet<>();
     public List<LeerdoelHardskill> leerdoelenHardskill = new ArrayList<>();
 
     @OneToMany(mappedBy = "trainee")

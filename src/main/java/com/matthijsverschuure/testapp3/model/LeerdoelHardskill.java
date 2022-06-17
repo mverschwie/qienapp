@@ -10,17 +10,18 @@ import java.util.List;
 @Table(name = "leerdoelHardskill")
 public class LeerdoelHardskill extends Leerdoel {
 
-    @ManyToOne
-    @JoinColumn(name = "trainee_id")
-    private Trainee trainee;
-
-//    @OneToOne
+//    @ManyToOne
+//    @JoinColumn(name = "trainee_id")
+//    private Trainee trainee;
+//
+//    @ManyToOne
 //    @JoinColumn(name = "certificaatId")
 //    private Certificaat certificaat;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
+
 
 //    public List<Certificaat> certificaten = new ArrayList<>();
 //

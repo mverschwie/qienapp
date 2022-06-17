@@ -30,8 +30,6 @@ public class LeerdoelHardskillService {
 //        Trainee t = traineeService.haalTraineeBijID(traineeId);
 //        t.addLeerdoelhardskill(l);
 //        leerdoelHardskillRepository.save(l);
-//        //add trainee
-//        return l;
 //    }
 
 

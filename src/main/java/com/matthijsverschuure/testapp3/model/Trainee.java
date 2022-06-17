@@ -46,10 +46,4 @@ public class Trainee extends User {
     }
 
 
-//    public List<Trainee> addTrainee (Trainee trainee) {
-//        this.trainees.add(trainee);
-//        trainee.setTrainee(this);
-//        return this.trainees;
-//    }
-
 }

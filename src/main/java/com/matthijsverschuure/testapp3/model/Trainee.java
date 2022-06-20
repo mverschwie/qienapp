@@ -15,8 +15,8 @@ import java.util.Set;
 
 public class Trainee extends User {
 
-    private void setTrainee(Trainee trainee) {
-    }
+//    private void setTrainee(Trainee trainee) {
+//    }
 
     @ManyToMany
     @JsonBackReference
@@ -34,15 +34,6 @@ public class Trainee extends User {
 //        this.leerdoelenHardskill.add(leerdoelHardskill);
 //    }
 
-    @OneToMany(mappedBy = "trainee")
-    public List<LeerdoelHardskill> leerdoelenHardskill = new ArrayList<>();
-
-    @OneToMany(mappedBy = "trainee")
-    public List<LeerdoelSoftskill> leerdoelenSoftskill = new ArrayList<>();
-
-    public void addLeerdoelhardskill(LeerdoelHardskill l) {
-        this.leerdoelenHardskill.add(l);
-    }
 
 
 }

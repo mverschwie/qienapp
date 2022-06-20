@@ -20,10 +20,10 @@ public class CoachEndpoint {
     public Coach nieuweCoach(@RequestBody Coach coach) {
         return coachService.nieuweCoach(coach);
     }
-//    @GetMapping("/{id}")
-//    public Coach haalCoachBijId(@PathVariable(value = "id") long id) {
-//        return coachService.haalCoachBijId(id);
-//    }
+    @GetMapping("/{id}")
+    public Coach haalCoachBijId(@PathVariable(value = "id") long id) {
+        return coachService.haalCoachBijId(id);
+    }
 
     @PostMapping("/{coachId}/{traineeId}")
     public void koppelCoachAanTrainee(@PathVariable(value = "coachId") long coachId, @PathVariable(value = "traineeId") long traineeId) {

@@ -1,6 +1,8 @@
 package com.matthijsverschuure.testapp3.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.matthijsverschuure.testapp3.controller.CertificaatRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,6 +11,9 @@ import java.util.List;
 @MappedSuperclass
 @Table(name = "leerdoel")
 public class Leerdoel {
+
+    @Autowired
+    CertificaatRepository certificaatRepository;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,9 +27,9 @@ public class Leerdoel {
     @JoinColumn(name = "trainee_id")
     private Trainee trainee;
 
-    @ManyToOne
-    @JoinColumn(name = "certificaatId")
-    private Certificaat certificaat;
+//    @ManyToOne
+//    @JoinColumn(name = "certificaatId")
+//    private Certificaat certificaat;
 
     public String getOmschrijvingLeerdoel() {
         return omschrijvingLeerdoel;
@@ -53,12 +58,13 @@ public class Leerdoel {
     private void setLeerdoel(Leerdoel leerdoel) {
     }
 
-//    public List<Certificaat> certificaten = new ArrayList<>();
-//
-//    public void addCertificaat(Certificaat certificaat) {
-//        this.certificaten.add(certificaat);
-//    }
+    public List<Certificaat> certificaten = new ArrayList<>();
 
+
+    public Certificaat addCertificaat(Certificaat certificaat) {
+        System.out.println("Certificaat toegevoegd");
+        return certificaatRepository.save(certificaat);
+    }
 
 //    @OneToMany
 //    @JsonManagedReference

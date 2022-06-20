@@ -13,13 +13,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
 
-    public long id; //private?
+    public long id;
 
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "adres_id", referencedColumnName = "id")
 //    private Adres adres; // public?
 
 
+
+    private String rol;
     private String voornaam;
     private String achternaam;
     private String email;
@@ -28,13 +30,13 @@ public class User {
 
 
 
-//    public String getRol() {
-//        return rol;
-//    }
-//
-//    public void setRol(String rol) {
-//        this.rol = rol;
-//    }
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 
     public String getVoornaam() {
         return voornaam;

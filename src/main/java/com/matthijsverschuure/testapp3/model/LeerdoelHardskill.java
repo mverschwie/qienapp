@@ -11,10 +11,6 @@ public class LeerdoelHardskill extends Leerdoel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-    @ManyToOne
-    @JoinColumn(name = "certificaatId")
-    public Certificaat certificaat;
-
     public void setLeerdoelHardskill(LeerdoelHardskill leerdoelHardskill) {
     }
 

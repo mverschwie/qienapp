@@ -56,7 +56,11 @@ public class Leerdoel {
     private void setLeerdoel(Leerdoel leerdoel) {
     }
 
-    public List<Certificaat> certificaten = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "certificaatId")
+    public Certificaat certificaat;
+
+//    public List<Certificaat> certificaten = new ArrayList<>();
 
 
 //    public Certificaat addCertificaat(Certificaat certificaat) {

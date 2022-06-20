@@ -1,13 +1,6 @@
 package com.matthijsverschuure.testapp3.model;
-
-import com.matthijsverschuure.testapp3.controller.CertificaatRepository;
-import com.matthijsverschuure.testapp3.controller.LeerdoelHardskillRepository;
-import org.slf4j.Marker;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
 @Table(name = "leerdoelHardskill")

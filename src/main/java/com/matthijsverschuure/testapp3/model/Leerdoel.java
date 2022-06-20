@@ -12,8 +12,6 @@ import java.util.List;
 @Table(name = "leerdoel")
 public class Leerdoel {
 
-    @Autowired
-    CertificaatRepository certificaatRepository;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -61,10 +59,10 @@ public class Leerdoel {
     public List<Certificaat> certificaten = new ArrayList<>();
 
 
-    public Certificaat addCertificaat(Certificaat certificaat) {
-        System.out.println("Certificaat toegevoegd");
-        return certificaatRepository.save(certificaat);
-    }
+//    public Certificaat addCertificaat(Certificaat certificaat) {
+//        System.out.println("Certificaat toegevoegd");
+//        return certificaatRepository.save(certificaat);
+//    }
 
 //    @OneToMany
 //    @JsonManagedReference

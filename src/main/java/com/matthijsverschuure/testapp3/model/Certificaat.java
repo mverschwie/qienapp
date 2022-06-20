@@ -20,11 +20,8 @@ public class Certificaat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-
     @OneToMany(mappedBy = "certificaat")
     public List<LeerdoelHardskill> leerdoelenHardskill = new ArrayList<>();
-
-
 
     public void setLeerdoelHardskill(LeerdoelHardskill leerdoelHardskill) {
     }

@@ -11,12 +11,6 @@ public class LeerdoelSoftskill extends Leerdoel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-    @OneToMany(mappedBy = "trainee")
-    public List<LeerdoelSoftskill> leerdoelenSoftskill = new ArrayList<>();
-
-    public void addLeerdoelSoftskill(LeerdoelSoftskill l) {
-        this.leerdoelenSoftskill.add(l);
-    }
 
 //    @ManyToOne
 //    @JoinColumn(name = "certificaatId")

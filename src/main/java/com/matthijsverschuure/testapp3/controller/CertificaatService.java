@@ -1,7 +1,7 @@
 package com.matthijsverschuure.testapp3.controller;
 
 import com.matthijsverschuure.testapp3.model.Certificaat;
-import com.matthijsverschuure.testapp3.model.LeerdoelHardskill;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +10,12 @@ import org.springframework.stereotype.Service;
 public class CertificaatService {
     @Autowired
     CertificaatRepository certificaatRepository;
-    LeerdoelHardskillService leerdoelHardskillService;
-    LeerdoelHardskillRepository leerdoelHardskillRepository;
 
+    @Autowired
+    LeerdoelService leerdoelService;
+
+    @Autowired
+    LeerdoelRepository leerdoelRepository;
 
     @Autowired
     TraineeService traineeService;

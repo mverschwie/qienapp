@@ -28,6 +28,11 @@ public class LeerdoelEndpoint {
 //        traineeService.koppelLeerdoelAanTrainee(leerdoelId, traineeId);
 //    }
 
+    @PostMapping("/{leerdoelId}/{certificaatId}")
+    public void koppelCertificaat(@PathVariable(value = "leerdoelId") long leerdoelId, @PathVariable(value = "certificaatId") long certificaatId) {
+        leerdoelService.koppelCertificaat(leerdoelId, certificaatId);
+    }
+
 
     @GetMapping("/{id}")
     public Leerdoel haalLeerdoelBijID(@PathVariable(value = "id") long id) {

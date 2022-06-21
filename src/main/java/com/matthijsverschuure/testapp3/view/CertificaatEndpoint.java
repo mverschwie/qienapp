@@ -1,6 +1,7 @@
 package com.matthijsverschuure.testapp3.view;
 
 import com.matthijsverschuure.testapp3.controller.CertificaatService;
+import com.matthijsverschuure.testapp3.controller.LeerdoelService;
 import com.matthijsverschuure.testapp3.model.Certificaat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 public class CertificaatEndpoint {
     @Autowired
     CertificaatService certificaatService;
+
+    @Autowired
+    LeerdoelService leerdoelService;
 
     @GetMapping("/all")
     public Iterable<Certificaat> haalAlleCertificaten() {
@@ -25,10 +29,6 @@ public class CertificaatEndpoint {
         return certificaatService.haalCertificaatBijID(id);
     }
 
-//    @PostMapping("/{id}/{leerdoelHardskillId}")
-//    public void koppelCertificaatAanLeerdoelHardskill(@PathVariable(value = "id") long id, @PathVariable(value = "leerdoelHardskillId") long leerdoelHardskillId) {
-//        certificaatService.koppelCertificaatAanleerdoelHardskill(id, leerdoelHardskillId);
-//    }
 
 
 

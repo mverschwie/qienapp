@@ -1,14 +1,10 @@
 package com.matthijsverschuure.testapp3.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.matthijsverschuure.testapp3.controller.CertificaatRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@MappedSuperclass
+@Entity
 @Table(name = "leerdoel")
 public class Leerdoel {
 
@@ -20,14 +16,24 @@ public class Leerdoel {
     private String datumAfgerond;
     private boolean isBehaald;
 
+    private String verslag;
+
+    private String soort;
+
+    public void setTrainee(Trainee trainee) {
+    }
 
     @ManyToOne
-    @JoinColumn(name = "trainee_id")
-    private Trainee trainee;
+    @JoinColumn(name = "certificaatId")
+    public Certificaat certificaat;
 
-//    @ManyToOne
-//    @JoinColumn(name = "certificaatId")
-//    private Certificaat certificaat;
+
+    @OneToMany
+    public List<Certificaat> certificaten = new ArrayList<>();
+    public void addCertificaat(Certificaat certificaat) {
+        this.certificaten.add(certificaat);
+    }
+
 
     public String getOmschrijvingLeerdoel() {
         return omschrijvingLeerdoel;
@@ -53,56 +59,33 @@ public class Leerdoel {
         this.isBehaald = isBehaald;
     }
 
-    private void setLeerdoel(Leerdoel leerdoel) {
+    public String getVerslag() {
+        return verslag;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "certificaatId")
-    public Certificaat certificaat;
+    public void setVerslag(String verslag) {
+        this.verslag = verslag;
+    }
 
-//    public List<Certificaat> certificaten = new ArrayList<>();
+    public String getSoort() {
+        return soort;
+    }
 
-
-//    public Certificaat addCertificaat(Certificaat certificaat) {
-//        System.out.println("Certificaat toegevoegd");
-//        return certificaatRepository.save(certificaat);
-//    }
-
-//    @OneToMany
-//    @JsonManagedReference
-//    public List<Leerdoel> leerdoelen = new ArrayList<>();
-//
-//    public Trainee getTrainee() {
-//        return trainee;
-//    }
-//
-//    public void setTrainee(Trainee trainee) {
-//        this.trainee = trainee;
-//    }
-//
-//    public List<Leerdoel> addLeerdoel (Leerdoel leerdoel) {
-//        this.leerdoelen.add(leerdoel);
-//        leerdoel.setLeerdoel(this);
-//        return this.leerdoelen;
-//    }
-//
-//
-//    public List<Leerdoel> removeLeerdoel (Leerdoel leerdoel) {
-//        this.leerdoelen.remove(leerdoel);
-//        leerdoel.setLeerdoel(this);
-//        return this.leerdoelen;
-//    }
-
-//    public List<Certificaat> certificaat = new ArrayList<>();
-//
-//    public List<Certificaat> addCertificaat (Certificaat certificaat) {
-//        this.Certificaten.add(certificaat);
-//        certificaat.setCertificaat(this);
-//        return this.certificaten;
-//    }
+    public void setSoort(String soort) {
+        this.soort = soort;
+    }
 
 
-//    public void setLeerdoel(Trainee trainee) {
-//    }
+    @OneToMany
+    public List<Trainee> trainees = new ArrayList<>();
+
+    public void addTrainee(Trainee trainee) {
+        this.trainees.add(trainee);
+    }
+
+
+
+
+
 
 }

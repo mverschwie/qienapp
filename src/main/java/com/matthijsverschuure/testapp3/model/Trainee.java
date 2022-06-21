@@ -15,8 +15,7 @@ import java.util.Set;
 
 public class Trainee extends User {
 
-//    private void setTrainee(Trainee trainee) {
-//    }
+
 
     @ManyToMany
     @JsonBackReference
@@ -26,13 +25,17 @@ public class Trainee extends User {
         this.coaches.add(c);
     }
 
-//    @OneToMany
-//    @JsonBackReference
-//    public List<LeerdoelHardskill> leerdoelenHardskills = new ArrayList<>();
-//
-//    public void addLeerdoelHardskill(LeerdoelHardskill leerdoelHardskill) {
-//        this.leerdoelenHardskill.add(leerdoelHardskill);
-//    }
+    @OneToMany
+    public List<Leerdoel> leerdoelen = new ArrayList<>();
+    public void addLeerdoel(Leerdoel leerdoel) {
+        this.leerdoelen.add(leerdoel);
+    }
+
+
+
+
+
+
 
 
 

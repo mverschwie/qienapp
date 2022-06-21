@@ -14,13 +14,6 @@ import java.util.List;
 public class Coach extends User {
 
     @ManyToMany
-
-//    @JoinTable(
-//            name = "coachesTrainees",
-//            joinColumns = {@JoinColumn(name = "CoachId")},
-//            inverseJoinColumns = {@JoinColumn(name = "TraineeId")})
-
-
     public List<Trainee> trainees = new ArrayList<>();
 
     public void addTrainee(Trainee t){

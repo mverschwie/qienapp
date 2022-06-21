@@ -1,8 +1,6 @@
 package com.matthijsverschuure.testapp3.controller;
 
-import com.matthijsverschuure.testapp3.model.Coach;
-import com.matthijsverschuure.testapp3.model.LeerdoelHardskill;
-import com.matthijsverschuure.testapp3.model.Trainee;
+import com.matthijsverschuure.testapp3.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +10,9 @@ import org.springframework.stereotype.Service;
 public class TraineeService {
     @Autowired
     TraineeRepository traineeRepository;
+
+    @Autowired
+    LeerdoelRepository leerdoelRepository;
 
     public Iterable<Trainee> haalAlleTrainees() {
         return traineeRepository.findAll();
@@ -26,11 +27,20 @@ public class TraineeService {
         return null;
     }
 
+    //Nakijken >>>
+    public void koppelLeerdoel(Long traineeId, Long leerdoelId) {
+        Trainee trainee = traineeRepository.findById(traineeId).get();
+        Leerdoel leerdoel = leerdoelRepository.findById(leerdoelId).get();
+        leerdoel.addTrainee(trainee);
+        trainee.addLeerdoel(leerdoel);
+        traineeRepository.save(trainee);
+
+        System.out.println("Leerdoel gekoppeld aan trainee.");
+    }
+
 
     public void verwijderTraineeBijID(long id) {
         traineeRepository.deleteById(id);
     }
-
-
 
 }

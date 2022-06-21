@@ -29,15 +29,11 @@ public class TraineeEndpoint {
     public void verwijderTraineeBijID(@PathVariable(value = "id") long id) {
         traineeService.verwijderTraineeBijID(id);
     }
-//    @PostMapping("/{leerdoelHardskillId}")
-//    public void voegLdId(@PathVariable(value = "voegLdId") long leerdoelHardskillId) {
-//        traineeService.voegLdId(leerdoelHardskillId);
-//    }
 
-//    @PostMapping("/{coachId}/{traineeId}")
-//    public void koppelCoachAanTrainee(@PathVariable(value = "coachId") long coachId, @PathVariable(value = "traineeId") long traineeId) {
-//        coachService.koppelCoachAanTrainee(coachId, traineeId);
-//    }
+    @PostMapping("/{traineeId}/{leerdoelId}")
+    public void koppelLeerdoel(@PathVariable(value = "traineeId") long traineeId, @PathVariable(value = "leerdoelId") long leerdoelId) {
+        traineeService.koppelLeerdoel(traineeId, leerdoelId);
+    }
 
 
 }

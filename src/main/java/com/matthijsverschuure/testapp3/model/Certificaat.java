@@ -20,11 +20,21 @@ public class Certificaat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-    @OneToMany(mappedBy = "certificaat")
-    public List<LeerdoelHardskill> leerdoelenHardskill = new ArrayList<>();
 
-    public void setLeerdoelHardskill(LeerdoelHardskill leerdoelHardskill) {
+    private String certificaatUpload;
+
+    public String getCertificaatUpload() {
+        return certificaatUpload;
     }
+
+    public void setCertificaatUpload(String certificaatUpload) {
+        this.certificaatUpload = certificaatUpload;
+    }
+
+    @OneToMany(mappedBy = "certificaat")
+    public List<Leerdoel> Leerdoelen = new ArrayList<>();
+
+
 
 
 }

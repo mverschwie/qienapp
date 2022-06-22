@@ -21,8 +21,8 @@ public class TraineeEndpoint {
     }
 
     @GetMapping("/{id}")
-    public Trainee haalTraineeBijID(@PathVariable(value = "id") long id) {
-        return traineeService.haalTraineeBijID(id);
+    public Trainee haalTraineeBijId(@PathVariable(value = "id") long id) {
+        return traineeService.haalTraineeBijId(id);
     }
 
     @DeleteMapping("/{id}")
@@ -30,15 +30,12 @@ public class TraineeEndpoint {
         traineeService.verwijderTraineeBijID(id);
     }
 
-    @PostMapping("/{traineeId}/{leerdoelId}")
-    public void koppelLeerdoel(@PathVariable(value = "traineeId") long traineeId, @PathVariable(value = "leerdoelId") long leerdoelId) {
-        traineeService.koppelLeerdoel(traineeId, leerdoelId);
-    }
 
-    @PostMapping("/{traineeId}/{leidinggevendeId}")
-    public void koppelTraineeAanLeidinggevende(@PathVariable(value = "traineeId") long traineeId, @PathVariable(value = "leidinggevendeId") long leidinggevendeId) {
-        traineeService.koppelTraineeAanLeidinggevende(traineeId, leidinggevendeId);
-    }
+
+//    @PostMapping("/{traineeIdLeidinggevende}/{leidinggevendeId}")
+//    public void koppelTraineeAanLeidinggevende(@PathVariable(value = "traineeIdLeidinggevende") long traineeIdLeidinggevende, @PathVariable(value = "leidinggevendeId") long leidinggevendeId) {
+//        traineeService.koppelTraineeAanLeidinggevende(traineeIdLeidinggevende, leidinggevendeId);
+//    }
 
 
 }

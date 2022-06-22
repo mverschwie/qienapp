@@ -12,10 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "trainee")
 
-
 public class Trainee extends User {
-
-
 
     @ManyToMany
     @JsonBackReference
@@ -29,12 +26,11 @@ public class Trainee extends User {
     public void addLeerdoel(Leerdoel leerdoel) {
         this.leerdoelen.add(leerdoel);
     }
-
-    @ManyToMany
-    public List<Leidinggevende> leidinggevenden = new ArrayList<>();
-    public void addLeidinggevende(Leidinggevende leidinggevende) {
-        this.leidinggevenden.add(leidinggevende);
-    }
+//    @ManyToMany
+//    public List<Leidinggevende> leidinggevenden = new ArrayList<>();
+//    public void addLeidinggevende(Leidinggevende leidinggevende) {
+//        this.leidinggevenden.add(leidinggevende);
+//    }
 
 
 }

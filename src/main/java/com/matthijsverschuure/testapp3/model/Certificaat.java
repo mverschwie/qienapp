@@ -1,5 +1,6 @@
 package com.matthijsverschuure.testapp3.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.matthijsverschuure.testapp3.controller.CertificaatRepository;
 import org.apache.catalina.Store;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,6 @@ public class Certificaat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-
     private String certificaatUpload;
 
     public String getCertificaatUpload() {
@@ -31,14 +31,12 @@ public class Certificaat {
         this.certificaatUpload = certificaatUpload;
     }
 
-    @ManyToMany(mappedBy = "certificaat")
-    public List<Leerdoel> leerdoelen = new ArrayList<>();
-
-    public void addLeerdoel(Leerdoel leerdoel) {
-        this.leerdoelen.add(leerdoel);
-    }
-
-
+//    @ManyToMany(mappedBy = "certificaat")
+//    public List<Leerdoel> leerdoelen = new ArrayList<>();
+//
+//    public void addLeerdoel(Leerdoel leerdoel) {
+//        this.leerdoelen.add(leerdoel);
+//    }
 
 
 }

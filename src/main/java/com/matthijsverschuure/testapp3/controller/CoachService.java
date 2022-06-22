@@ -31,7 +31,7 @@ public class CoachService {
 
     public void koppelCoachAanTrainee(long coachId, long traineeId) {
         Coach c = haalCoachBijId(coachId);
-        Trainee t = traineeService.haalTraineeBijID(traineeId);
+        Trainee t = traineeService.haalTraineeBijId(traineeId);
         c.addTrainee(t);
         t.addCoach(c);
         coachRepository.save(c);

@@ -17,6 +17,9 @@ public class LeerdoelService {
     @Autowired
     CertificaatRepository certificaatRepository;
 
+    @Autowired
+    TraineeRepository traineeRepository;
+
     public Iterable<Leerdoel> haalAlleLeerdoelen() {
         return leerdoelRepository.findAll();
     }
@@ -31,14 +34,24 @@ public class LeerdoelService {
         return null;
     }
 
-    public void koppelCertificaat(Long leerdoelId, Long certificaatId) {
-        Leerdoel leerdoel = leerdoelRepository.findById(leerdoelId).get();
-        Certificaat certificaat = certificaatRepository.findById(certificaatId).get();
-        leerdoel.addCertificaat(certificaat);
-        certificaat.addLeerdoel(leerdoel);
+//    public void koppelCertificaat(Long leerdoelId, Long certificaatId) {
+//        Leerdoel leerdoel = haalLeerdoelBijID(leerdoelId);
+//        Certificaat certificaat = certificaatRepository.findById(certificaatId).get();
+//        leerdoel.addCertificaat(certificaat);
+//        certificaat.addLeerdoel(leerdoel);
+//        leerdoelRepository.save(leerdoel);
+//
+//        System.out.println("Certificaat gekoppeld aan leerdoel.");
+//    }
+
+    public void koppelLeerdoel(Long leerdoelId, Long traineeId) {
+        Leerdoel leerdoel = haalLeerdoelBijID(leerdoelId);
+        Trainee trainee = traineeRepository.findById(traineeId).get();
+        leerdoel.addTrainee(trainee);
+        trainee.addLeerdoel(leerdoel);
         leerdoelRepository.save(leerdoel);
 
-        System.out.println("Certificaat gekoppeld aan leerdoel.");
+        System.out.println("Leerdoel gekoppeld aan trainee.");
     }
 
 //    public void koppelLeerdoelAanTrainee(long leerdoelId, long traineeId) {

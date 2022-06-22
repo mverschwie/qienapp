@@ -21,35 +21,24 @@ public class TraineeService {
     public Trainee nieuweTrainee(Trainee trainee) {
         return traineeRepository.save(trainee);
     }
-    public Trainee haalTraineeBijID(long id) {
+    public Trainee haalTraineeBijId(long id) {
         if (traineeRepository.existsById(id)) {
             return traineeRepository.findById(id).get();
         }
         return null;
     }
 
-    //Nakijken >>>
-    public void koppelLeerdoel(Long traineeId, Long leerdoelId) {
-        Trainee trainee = traineeRepository.findById(traineeId).get();
-        Leerdoel leerdoel = leerdoelRepository.findById(leerdoelId).get();
-        leerdoel.addTrainee(trainee);
-        trainee.addLeerdoel(leerdoel);
-        traineeRepository.save(trainee);
-
-        System.out.println("Leerdoel gekoppeld aan trainee.");
-    }
-
     // TODO addTrainee
-    public void koppelTraineeAanLeidinggevende(long traineeId, long leidinggevendeId) {
-        Trainee trainee = haalTraineeBijID(traineeId);
-        Leidinggevende leidinggevende = leidinggevendeService.haalLeidinggevendeBijId(leidinggevendeId);
-        trainee.addLeidinggevende(leidinggevende);
-        leidinggevende.addTrainee(trainee);
-        traineeRepository.save(trainee);
-
-        System.out.println("Trainee gekoppeld aan leidinggevende.");
-
-    }
+//    public void koppelTraineeAanLeidinggevende(long traineeIdLeidinggevende, long leidinggevendeId) {
+//        Trainee trainee = haalTraineeBijId(traineeIdLeidinggevende);
+//        Leidinggevende leidinggevende = leidinggevendeService.haalLeidinggevendeBijId(leidinggevendeId);
+//        trainee.addLeidinggevende(leidinggevende);
+//        leidinggevende.addTrainee(trainee);
+//        traineeRepository.save(trainee);
+//
+//        System.out.println("Trainee gekoppeld aan leidinggevende.");
+//
+//    }
 
     public void verwijderTraineeBijID(long id) {
         traineeRepository.deleteById(id);

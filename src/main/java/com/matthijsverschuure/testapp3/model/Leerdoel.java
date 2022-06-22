@@ -30,12 +30,12 @@ public class Leerdoel {
     public Certificaat certificaat;
 
 
-    @ManyToMany
-    @JsonBackReference
-    public List<Certificaat> certificaten = new ArrayList<>();
-    public void addCertificaat(Certificaat certificaat) {
-        this.certificaten.add(certificaat);
-    }
+//    @ManyToMany
+//    @JsonBackReference
+//    public List<Certificaat> certificaten = new ArrayList<>();
+//    public void addCertificaat(Certificaat certificaat) {
+//        this.certificaten.add(certificaat);
+//    }
 
 
     public String getOmschrijvingLeerdoel() {

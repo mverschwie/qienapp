@@ -18,13 +18,14 @@ public class LeidinggevendeEndpoint {
         return leidinggevendeService.haalAlleLeidinggevenden();
     }
 
-//    @GetMapping("/{id}")
-//    public Leidinggevende haalLeidinggevendeBijID(@PathVariable(value = "id") long id) {
-//        return leidinggevendeService.haalLeidinggevendeBijID(id);
-//    }
+    @GetMapping("/{id}")
+    public Leidinggevende haalLeidinggevendeBijID(@PathVariable(value = "leidinggevendeId") long leidinggevendeId) {
+        return leidinggevendeService.haalLeidinggevendeBijId(leidinggevendeId);
+    }
     @PostMapping("/nieuwe-leidinggevende")
     public Leidinggevende nieuweLeidinggevende(@RequestBody Leidinggevende leidinggevende) {
         return leidinggevendeService.nieuweLeidinggevende(leidinggevende);
     }
+
 
 }

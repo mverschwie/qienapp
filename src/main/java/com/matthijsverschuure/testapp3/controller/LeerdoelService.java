@@ -35,6 +35,7 @@ public class LeerdoelService {
         Leerdoel leerdoel = leerdoelRepository.findById(leerdoelId).get();
         Certificaat certificaat = certificaatRepository.findById(certificaatId).get();
         leerdoel.addCertificaat(certificaat);
+        certificaat.addLeerdoel(leerdoel);
         leerdoelRepository.save(leerdoel);
 
         System.out.println("Certificaat gekoppeld aan leerdoel.");

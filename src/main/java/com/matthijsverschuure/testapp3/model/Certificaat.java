@@ -31,8 +31,12 @@ public class Certificaat {
         this.certificaatUpload = certificaatUpload;
     }
 
-    @OneToMany(mappedBy = "certificaat")
-    public List<Leerdoel> Leerdoelen = new ArrayList<>();
+    @ManyToMany(mappedBy = "certificaat")
+    public List<Leerdoel> leerdoelen = new ArrayList<>();
+
+    public void addLeerdoel(Leerdoel leerdoel) {
+        this.leerdoelen.add(leerdoel);
+    }
 
 
 

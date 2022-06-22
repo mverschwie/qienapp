@@ -5,14 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-
 @Service
 public class TraineeService {
     @Autowired
     TraineeRepository traineeRepository;
-
     @Autowired
     LeerdoelRepository leerdoelRepository;
+    @Autowired
+    LeidinggevendeService leidinggevendeService;
+
 
     public Iterable<Trainee> haalAlleTrainees() {
         return traineeRepository.findAll();
@@ -38,9 +39,23 @@ public class TraineeService {
         System.out.println("Leerdoel gekoppeld aan trainee.");
     }
 
+    // TODO addTrainee
+    public void koppelTraineeAanLeidinggevende(long traineeId, long leidinggevendeId) {
+        Trainee trainee = haalTraineeBijID(traineeId);
+        Leidinggevende leidinggevende = leidinggevendeService.haalLeidinggevendeBijId(leidinggevendeId);
+        trainee.addLeidinggevende(leidinggevende);
+        leidinggevende.addTrainee(trainee);
+        traineeRepository.save(trainee);
+
+        System.out.println("Trainee gekoppeld aan leidinggevende.");
+
+    }
 
     public void verwijderTraineeBijID(long id) {
         traineeRepository.deleteById(id);
     }
+
+
+
 
 }

@@ -1,5 +1,7 @@
 package com.matthijsverschuure.testapp3.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +30,8 @@ public class Leerdoel {
     public Certificaat certificaat;
 
 
-    @OneToMany
+    @ManyToMany
+    @JsonBackReference
     public List<Certificaat> certificaten = new ArrayList<>();
     public void addCertificaat(Certificaat certificaat) {
         this.certificaten.add(certificaat);

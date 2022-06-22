@@ -17,8 +17,7 @@ public class CertificaatService {
     @Autowired
     LeerdoelRepository leerdoelRepository;
 
-    @Autowired
-    TraineeService traineeService;
+
 
     public Iterable<Certificaat> haalAlleCertificaten() {
         return certificaatRepository.findAll();
@@ -34,11 +33,5 @@ public class CertificaatService {
         return null;
     }
 
-//    public void koppelCertificaatAanleerdoelHardskill(long certificaatId, long leerdoelHardskillId) {
-//        Certificaat c = haalCertificaatBijID(certificaatId);
-//        LeerdoelHardskill l = leerdoelHardskillService.haalLeerdoelHardskillBijId(leerdoelHardskillId);
-//        c.addLeerdoelHardskill(l);
-//        l.addCertificaat(c);
-//        leerdoelHardskillRepository.save(l);
-//    }
+
 }

@@ -35,6 +35,11 @@ public class TraineeEndpoint {
         traineeService.koppelLeerdoel(traineeId, leerdoelId);
     }
 
+    @PostMapping("/{traineeId}/{leidinggevendeId}")
+    public void koppelTraineeAanLeidinggevende(@PathVariable(value = "traineeId") long traineeId, @PathVariable(value = "leidinggevendeId") long leidinggevendeId) {
+        traineeService.koppelTraineeAanLeidinggevende(traineeId, leidinggevendeId);
+    }
+
 
 }
 

@@ -16,4 +16,10 @@ public class LeidinggevendeService {
         return leidinggevendeRepository.save(leidinggevende);
     }
 
+    public Leidinggevende haalLeidinggevendeBijId(long leidinggevendeId) {
+        if (leidinggevendeRepository.existsById(leidinggevendeId)) {
+            return leidinggevendeRepository.findById(leidinggevendeId).get();
+        }
+        return null;
+    }
 }

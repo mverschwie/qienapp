@@ -36,5 +36,5 @@ public class CoachService {
         t.addCoach(c);
         coachRepository.save(c);
     }
-    // todo exception voor als coach/trainee id niet bestaat
+    // TODO exception voor als coach/trainee id niet bestaat
 }

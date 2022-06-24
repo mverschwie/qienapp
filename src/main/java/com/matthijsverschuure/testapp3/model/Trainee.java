@@ -14,6 +14,7 @@ import java.util.Set;
 
 public class Trainee extends User {
 
+
     @ManyToMany
     @JsonBackReference
     public List<Coach> coaches = new ArrayList<>();
@@ -26,11 +27,15 @@ public class Trainee extends User {
     public void addLeerdoel(Leerdoel leerdoel) {
         this.leerdoelen.add(leerdoel);
     }
-//    @ManyToMany
-//    public List<Leidinggevende> leidinggevenden = new ArrayList<>();
-//    public void addLeidinggevende(Leidinggevende leidinggevende) {
-//        this.leidinggevenden.add(leidinggevende);
-//    }
+
+    @ManyToOne
+    @JoinColumn(name = "leidinggevende_Id")
+    private Leidinggevende leidinggevende;
+
+    @ManyToOne
+    @JoinColumn(name = "hrMedewerkerId")
+    private HrMedewerker hrMedewerker;
+
 
 
 }

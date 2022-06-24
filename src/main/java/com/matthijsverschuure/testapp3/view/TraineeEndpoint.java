@@ -32,9 +32,9 @@ public class TraineeEndpoint {
 
 
 
-//    @PostMapping("/{traineeIdLeidinggevende}/{leidinggevendeId}")
-//    public void koppelTraineeAanLeidinggevende(@PathVariable(value = "traineeIdLeidinggevende") long traineeIdLeidinggevende, @PathVariable(value = "leidinggevendeId") long leidinggevendeId) {
-//        traineeService.koppelTraineeAanLeidinggevende(traineeIdLeidinggevende, leidinggevendeId);
+//    @PostMapping("/{traineeId}/{leidinggevendeId}")
+//    public void koppelLeidinggevende(@PathVariable(value = "traineeId") long traineeId, @PathVariable(value = "leidinggevendeId") long leidinggevendeId) {
+//        traineeService.koppelLeidinggevende(traineeId, leidinggevendeId);
 //    }
 
 

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 import java.util.HashSet;
 
-@MappedSuperclass // @Entity
+@MappedSuperclass
 @Table(name = "users")
 
 public class User {
@@ -26,9 +26,33 @@ public class User {
     private String achternaam;
     private String email;
     private String wachtwoord;
+    private String straatEnHuisnummer;
+    private String postcode;
+    private String woonplaats;
 
+    public String getStraatEnHuisnummer() {
+        return straatEnHuisnummer;
+    }
 
+    public void setStraatEnHuisnummer(String straatEnHuisnummer) {
+        this.straatEnHuisnummer = straatEnHuisnummer;
+    }
 
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    public String getWoonplaats() {
+        return woonplaats;
+    }
+
+    public void setWoonplaats(String woonplaats) {
+        this.woonplaats = woonplaats;
+    }
 
     public String getRol() {
         return rol;

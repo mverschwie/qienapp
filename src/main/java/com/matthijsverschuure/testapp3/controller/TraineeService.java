@@ -9,11 +9,6 @@ import org.springframework.stereotype.Service;
 public class TraineeService {
     @Autowired
     TraineeRepository traineeRepository;
-    @Autowired
-    LeerdoelRepository leerdoelRepository;
-    @Autowired
-    LeidinggevendeService leidinggevendeService;
-
 
     public Iterable<Trainee> haalAlleTrainees() {
         return traineeRepository.findAll();
@@ -28,21 +23,16 @@ public class TraineeService {
         return null;
     }
 
-    // TODO addTrainee
-//    public void koppelTraineeAanLeidinggevende(long traineeIdLeidinggevende, long leidinggevendeId) {
-//        Trainee trainee = haalTraineeBijId(traineeIdLeidinggevende);
-//        Leidinggevende leidinggevende = leidinggevendeService.haalLeidinggevendeBijId(leidinggevendeId);
-//        trainee.addLeidinggevende(leidinggevende);
-//        leidinggevende.addTrainee(trainee);
-//        traineeRepository.save(trainee);
-//
-//        System.out.println("Trainee gekoppeld aan leidinggevende.");
-//
-//    }
-
     public void verwijderTraineeBijID(long id) {
         traineeRepository.deleteById(id);
     }
+
+//    public void koppelLeidinggevende(long traineeId, long leidinggevendeId) {
+//        Trainee trainee = haalTraineeBijId(traineeId);
+//        Leidinggevende leidinggevende = leidinggevendeService.haalLeidinggevendeBijId(leidinggevendeId);
+//        leidinggevende.addTrainee(trainee);
+//        traineeRepository.save(trainee);
+//    }
 
 
 

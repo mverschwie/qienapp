@@ -40,8 +40,8 @@ public class LeerdoelEndpoint {
     }
 
     @GetMapping("/{id}")
-    public Leerdoel haalLeerdoelBijID(@PathVariable(value = "id") long id) {
-        return leerdoelService.haalLeerdoelBijID(id);
+    public Leerdoel haalLeerdoelBijId(@PathVariable(value = "id") long id) {
+        return leerdoelService.haalLeerdoelBijId(id);
     }
 }
 

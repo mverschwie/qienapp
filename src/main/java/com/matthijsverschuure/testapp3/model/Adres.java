@@ -14,33 +14,6 @@
 //    @OneToOne(mappedBy = "adres")
 //    private User user;
 //
-//    private String straatEnHuisnummer;
-//    private String postcode;
-//    private String woonplaats;
-//
-//    public String getStraatEnHuisnummer() {
-//        return straatEnHuisnummer;
-//    }
-//
-//    public void setStraatEnHuisnummer(String straatEnHuisnummer) {
-//        this.straatEnHuisnummer = straatEnHuisnummer;
-//    }
-//
-//    public String getPostcode() {
-//        return postcode;
-//    }
-//
-//    public void setPostcode(String postcode) {
-//        this.postcode = postcode;
-//    }
-//
-//    public String getWoonplaats() {
-//        return woonplaats;
-//    }
-//
-//    public void setWoonplaats(String woonplaats) {
-//        this.woonplaats = woonplaats;
-//    }
 //
 //
 //}

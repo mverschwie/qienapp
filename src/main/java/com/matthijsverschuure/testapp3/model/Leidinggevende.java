@@ -5,9 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "leidinggevende")
 public class Leidinggevende extends User {
 
-    @ManyToMany
+    @OneToMany(mappedBy = "leidinggevende")
     public List<Trainee> trainees = new ArrayList<>();
 
     public void addTrainee(Trainee trainee) {

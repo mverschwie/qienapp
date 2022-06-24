@@ -30,14 +30,6 @@ public class Leerdoel {
     public Certificaat certificaat;
 
 
-//    @ManyToMany
-//    @JsonBackReference
-//    public List<Certificaat> certificaten = new ArrayList<>();
-//    public void addCertificaat(Certificaat certificaat) {
-//        this.certificaten.add(certificaat);
-//    }
-
-
     public String getOmschrijvingLeerdoel() {
         return omschrijvingLeerdoel;
     }
@@ -78,13 +70,20 @@ public class Leerdoel {
         this.soort = soort;
     }
 
-
     @OneToMany
     public List<Trainee> trainees = new ArrayList<>();
 
     public void addTrainee(Trainee trainee) {
         this.trainees.add(trainee);
     }
+
+    @OneToMany
+    public List<Verslag> verslagen = new ArrayList<>();
+    public void addVerslag(Verslag verslag) {
+        this.verslagen.add(verslag);
+    }
+
+
 
 
 

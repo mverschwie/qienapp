@@ -27,7 +27,7 @@ public class LeerdoelService {
         return leerdoelRepository.save(leerdoel);
     }
 
-    public Leerdoel haalLeerdoelBijID(long id) {
+    public Leerdoel haalLeerdoelBijId(long id) {
         if (leerdoelRepository.existsById(id)) {
             return leerdoelRepository.findById(id).get();
         }
@@ -45,7 +45,7 @@ public class LeerdoelService {
 //    }
 
     public void koppelLeerdoel(Long leerdoelId, Long traineeId) {
-        Leerdoel leerdoel = haalLeerdoelBijID(leerdoelId);
+        Leerdoel leerdoel = haalLeerdoelBijId(leerdoelId);
         Trainee trainee = traineeRepository.findById(traineeId).get();
         leerdoel.addTrainee(trainee);
         trainee.addLeerdoel(leerdoel);

@@ -21,17 +21,18 @@ public class Certificaat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-    private String certificaatUpload;
+    private String omschrijving;
 
     public String getCertificaatUpload() {
-        return certificaatUpload;
+        return omschrijving;
     }
 
-    public void setCertificaatUpload(String certificaatUpload) {
-        this.certificaatUpload = certificaatUpload;
+    public void setCertificaatUpload(String omschrijving) {
+        this.omschrijving = omschrijving;
     }
 
 //    @ManyToMany(mappedBy = "certificaat")
+//    @JsonBackReference
 //    public List<Leerdoel> leerdoelen = new ArrayList<>();
 //
 //    public void addLeerdoel(Leerdoel leerdoel) {
